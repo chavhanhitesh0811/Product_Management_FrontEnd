@@ -1,0 +1,55 @@
+<div class="row m-0 p-0">
+    <div class="col-10 col-md-8 offset-1 offset-md-2">
+        <h1 class="text-center colour fw-bolder pt-4">Delete Products</h1>
+        <div>
+            <input type="text" class="form-control w-25" placeholder="Enter Product Name"
+                id="availableProductsSearchInputBox" #searchInput value="" (keyup)="searchProduct(searchInput.value)">
+        </div>
+        <div class="table-responsive m-0 p-0">
+            <div class="table-responsive">
+                <table class="table table-hover text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <!-- <th>Brand</th>
+                            <th>price</th> -->
+                            <th>action</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let product of products">
+                        <tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.productName}}</td>
+                            <!-- <td>{{product.brand}}</td>
+                            <td>{{product.price}}</td> -->
+                            <td role="button" (click)="selectProductToDelete(product)" data-bs-toggle="modal" data-bs-target="#deleteProductModal"><i
+                                    class="bi bi-trash3"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Product Modal -->
+<div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" style="margin-left: 175px;" id="exampleModalLabel">Delete Product</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                Are you sure you want to delete the product?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn text-white" data-bs-dismiss="modal" style="background-color: #ffba08;"
+                    (click)="deleteProduct()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

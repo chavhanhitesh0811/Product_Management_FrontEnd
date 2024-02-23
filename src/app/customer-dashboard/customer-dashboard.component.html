@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="text-center mt-3">Dashboard</h1>
+    <div class="row">
+        <input type="text" class="form-control" placeholder="Enter Product Name" id="availableProductsSearchInputBox"
+            #searchInput value="" (keyup)="searchProduct(searchInput.value)">
+        <div class="row productsDiv">
+            <div class="col-md-3 mt-3" *ngFor="let product of products">
+                <div class="card">
+                    <img src={{product.imageUrl}} class="card-img-top imgheight" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{product.productName}}</h5>
+                        <h6>Price : {{product.price}}</h6>
+                        <div class="text-center mt-3">
+                            <button class="btn btncolor text-white" (click)="getProduct(product)">View
+                                Product</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Get Product Modal -->
+<div class="modal fade" id="getProductModal" tabindex="-1" aria-labelledby="getProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin-left: 160px;">Product Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Id : <a>{{visitedProduct[0]?.id}}</a></h6>
+                <h6>Product Name : <a>{{visitedProduct[0]?.productName}}</a></h6>
+                <h6>Brand Name : <a>{{visitedProduct[0]?.brand}}</a></h6>
+                <h6>Price : <a>{{visitedProduct[0]?.price}}</a></h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

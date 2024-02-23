@@ -1,0 +1,16 @@
+::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  .imgheight {
+    height: 200px;
+  }
+  
+  .btncolor{
+    background-color: #ffba08;
+  }
+  
+  .productsDiv{
+    max-height: 450px;
+    overflow:auto;
+  }

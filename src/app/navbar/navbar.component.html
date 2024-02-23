@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid" id="nav">
+    <a class="navbar-brand" href="#">Product Management</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" role="button" (click)="navigateTo('customer-dashboard')">
+          <a class="nav-link active" aria-current="page">Dashboard</a>
+        </li>
+        <li class="nav-item" role="button" (click)="navigateTo('admin-dashboard')">
+          <a class="nav-link active" aria-current="page">Action Items</a>
+        </li>
+        <li class="nav-item mt-2" role="button" (click)="navigateTo('cart')">
+          <a class="nav-link active d-inline" aria-current="page">Cart</a>
+          <i class="bi bi-cart4 d-inline" style="color: #ffba08;margin-left: -5px;"></i>
+        </li>
+      </ul>
+    </div>
+    <!-- <button class="btn text-white" style="float: right;background-color: #ffba08;" (click)="login()">Login</button> -->
+    <button class="btn text-white" style="float: right; background-color: #ffba08;" (click)="isLogged ? logout() : login()">
+      {{ isLogged ? 'Logout' : 'Login' }}
+    </button>
+    
+  </div>
+</nav>

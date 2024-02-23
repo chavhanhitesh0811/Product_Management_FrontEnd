@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-10 col-md-4 offset-1 offset-md-4 mt-5 rounded-4" style="background-color: white;">
+        <h2 class="text-center mt-3 mb-3">Add Product</h2>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Enter product name" #productName>
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Enter brand name" #productBrand>
+        </div>
+        <div class="mb-3">
+            <textarea type="text" class="form-control" placeholder="Enter product description" #productDescription></textarea>
+        </div>
+        <div class="mb-3">
+            <input type="number" class="form-control" placeholder="Enter price" #productPrice>
+        </div>
+        <div class="mb-3">
+            <!-- <input type="text" class="form-control" placeholder="Insert image link" #productImage> -->
+            <input type="file" class="form-control" (change)="onFileSelected($event)" />
+        </div>
+        <div class="text-center mb-3">
+            <button type="submit" class="btn text-white" style="background-color: #ffba08;"
+                (click)="addProduct(productName.value , productBrand.value,toNumber(productPrice.value),productDescription.value)">Submit</button>
+        </div>
+    </div>
+</div>

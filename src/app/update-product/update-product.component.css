@@ -1,0 +1,10 @@
+th{
+    background-color: #ffba08 !important;
+    color: #ffffff !important;
+}
+.table-responsive {
+    max-height: 450px;
+}
+::-webkit-scrollbar {
+    width: 0px;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 class="text-center mt-3">My Cart</h1>
+    <div class="row">
+        <input type="text" class="form-control" placeholder="Enter Product Name" id="availableProductsSearchInputBox"
+            #searchInput value="" (keyup)="searchProduct(searchInput.value)">
+        <div class="row productsDiv">
+            <div class="col-md-3 mt-3" *ngFor="let product of products">
+                <div class="card">
+                    <img src={{product.imageUrl}} class="card-img-top imgheight" alt="...">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{product.productName}}</h5>
+                        <h6>Price : {{product.price}}</h6>
+                        <div class="text-center mt-3">
+                            <button class="btn btncolor text-white" (click)="removeFromCart(product.id)">Remove From Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

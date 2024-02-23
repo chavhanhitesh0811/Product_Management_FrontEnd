@@ -1,0 +1,43 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-10 offset-1 rounded" style="height: 400px; background-color: white;">
+            <h2 class="text-center mt-2">Product Description</h2>
+            <div class="row">
+                <div class="col-10 col-md-5 offset-0 offset-md-1 mt-4">
+                    <img src={{productToVisit.imageUrl}} alt="..." class="border border-2 rounded" style="width: 320px;height: 250px;">
+                </div>
+                <div class="col-10 col-md-6 offset-1 offset-md-0 mt-4">
+                    <table class="table">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Product Code :</th>
+                                <td>{{productToVisit.id}}</td>
+                              </tr>
+                          <tr>
+                            <th scope="row">Product Name :</th>
+                            <td>{{productToVisit.productName}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Brand Name</th>
+                            <td>{{productToVisit.brand}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Description :</th>
+                            <td colspan="2">{{productToVisit.description}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Price :</th>
+                            <td colspan="2">{{productToVisit.price}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="text-center">
+                        <button class="btn text-white" style="background-color: #ffba08;" (click)="addToCart(productToVisit.id)">Add to cart</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

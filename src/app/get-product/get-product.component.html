@@ -1,0 +1,52 @@
+<div class="row m-0 p-0">
+    <div class="col-10 col-md-8 offset-1 offset-md-2">
+        <h1 class="text-center colour fw-bolder pt-4">View Products</h1>
+        <div>
+            <input type="text" class="form-control w-25" placeholder="Enter Product Name"
+                id="availableProductsSearchInputBox" #searchInput value="" (keyup)="searchProduct(searchInput.value)">
+        </div>
+        <div class="table-responsive m-0 p-0">
+            <div class="table-responsive">
+                <table class="table table-hover text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>action</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let product of products">
+                        <tr>
+                            <td>{{product.id}}</td>
+                            <td>{{product.productName}}</td>
+                            <td role="button" (click)="getProduct(product)" data-bs-toggle="modal"
+                                data-bs-target="#getProductModal"><i class="bi bi-eye"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Get Product Modal -->
+<div class="modal fade" id="getProductModal" tabindex="-1" aria-labelledby="getProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel" style="margin-left: 160px;">Product Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Id : <a>{{visitedProduct[0]?.id}}</a></h6>
+                <h6>Product Name : <a>{{visitedProduct[0]?.productName}}</a></h6>
+                <h6>Brand Name : <a>{{visitedProduct[0]?.brand}}</a></h6>
+                <h6>Price : <a>{{visitedProduct[0]?.price}}</a></h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
